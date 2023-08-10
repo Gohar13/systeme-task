@@ -32,7 +32,7 @@ class Product implements ProductInterface
     /**
      * @var float
      *
-     * @ORM\Column(name="rice", type="decimal", precision=19, scale=4)
+     * @ORM\Column(name="price", type="decimal", precision=19, scale=4)
      */
     private float $price;
 

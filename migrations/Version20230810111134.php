@@ -21,11 +21,13 @@ final class Version20230810111134 extends AbstractMigration
     {
         $this->addSql('INSERT INTO products (name, price) VALUES (\'Iphone\', 100.0),(\'Наушники\', 20.0),(\'Чехол\', 10.0)');
 
+        $this->addSql('INSERT INTO coupons (code, sale_value, sale_type) VALUES (\'D15\', 10, \'fixed\'), (\'G15\', 5, \'in_percentage\')');
+
         $this->addSql('INSERT INTO countries (name, tax_percentage, tax_number_pattern)
-                            VALUES (\'Германии\', 19, \'DEXXXXXXXXX\'),
-                                    (\'Италии\', 22, \'ITXXXXXXXXXXX\'),
-                                    (\'Франции\', 20, \'GRXXXXXXXXX\'),
-                                    (\'Греции\', 24, \'FRYYXXXXXXXXX\')');
+                            VALUES (\'Германии\', 19, \'/^DE\\\\d{9}$/\'),
+                                    (\'Италии\', 22, \'/^IT\\\\d{11}$/\'),
+                                    (\'Франции\', 20, \'/^FR[a-zA-Z]{2}\\\\d{9}$/\'),
+                                    (\'Греции\', 24, \'/^GR\\\\d{9}$/\')');
     }
 
     public function down(Schema $schema): void

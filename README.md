@@ -112,3 +112,9 @@ docker-compose exec app php bin/console doctrine:migrations:migrate
 ```
 http://localhost:1234/api/doc
 ```
+
+### Run tests
+
+```
+docker-compose exec app php bin/phpunit
+```
