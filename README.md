@@ -107,11 +107,6 @@ docker-compose exec app composer install
 docker-compose exec app php bin/console doctrine:migrations:migrate
 ```
 
-6.Importing test data
-```
-docker-compose exec app php bin/console dump_data:insert
-```
-
 ### URLs
 
 ```
